@@ -1,4 +1,5 @@
-
+https://www.youtube.com/watch?v=-QeOyTk78Vc&list=PLeqyOOqxeiIOBthdddnMnusyrbOOade8-&index=1&t=4s
+https://github.com/okovtun/BV_011
 
 TODO:
 1. »спользу€ вывод на экран и Escape-последовательности вывести в окно консоли стишок "¬ лесу родилась ®лочка". —тишок должен быть выровнен по середине окна косоли и его куплеты должны быть разделены пустой строкой.
