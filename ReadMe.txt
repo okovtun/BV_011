@@ -1,5 +1,12 @@
 https://www.youtube.com/watch?v=-QeOyTk78Vc&list=PLeqyOOqxeiIOBthdddnMnusyrbOOade8-&index=1&t=4s
 https://github.com/okovtun/BV_011
+http://cplusplus.com/doc/tutorial/
+
+TODO:
+Решить задачи из файла VariablesTask.pdf
+
+TOREAD:
+http://cplusplus.com/doc/tutorial/constants/
 
 TODO:
 1. Используя вывод на экран и Escape-последовательности вывести в окно консоли стишок "В лесу родилась Ёлочка". Стишок должен быть выровнен по середине окна косоли и его куплеты должны быть разделены пустой строкой.
