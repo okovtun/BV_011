@@ -1,3 +1,23 @@
+Ознакомиться:
+https://www.chipdip.ru/info/import-ic-packages
+
+Производство процессоров:
+https://www.youtube.com/watch?v=tOS3Exwhd9w
+
+Охлаждение процессоров:
+https://www.youtube.com/watch?v=XXs0I5kuoX4 - очень показательный пример того, как можно кардинально повлиять на охлаждение проца. Ну просто ювилирная работа.
+
+Коротко и ясно:
+https://www.youtube.com/watch?v=jGrErLzePdw
+
+4700K Liquid metal:
+https://www.youtube.com/watch?v=W_sr5PHigGU
+
+
+https://www.youtube.com/watch?v=yI6csSs72bg - Блин, такой классный видос, правда его надо было немного раньше смотреть. Прошу прощения, что только сейчас это скидываю, но, как говорится, лучше позже чем никогда.
+https://www.youtube.com/watch?v=4Jp46wSLMzc - Это просто бомба, на нем даже я завис.
+
+
 ЧИТААТЬ ОБЯЗАТЕЛЬНО!!!!!!!!!!!!
 https://www.ixbt.com/cpu/cpu-digest-2009.shtml
 
