@@ -85,22 +85,22 @@ void main()
 	cout << "Вы закончили первый этап тестирования, и набрали " << counter << " очков\n";
 #endif // TEST
 
-	double a, b;	//Числа, вводимые с клавиатуры
+	double a, b, c;	//Числа, вводимые с клавиатуры
 	char s;		//Sign - знак операции
 	cout << "Введите выражение: ";
 	//cin.ignore();
-	cin.clear();
-	cin.ignore(32767, '\n');
+	/*cin.clear();
+	cin.ignore(32767, '\n');*/
 	cin >> a >> s >> b;
 	switch (s)
 	{
-	case '+': cout << a << " + " << b << " = " << a + b << endl; break;
-	case '-': cout << a << " - " << b << " = " << a - b << endl; break;
-	case '*': cout << a << " * " << b << " = " << a * b << endl; break;
-	case '/': cout << a << " / " << b << " = " << a / b << endl; break;
+	case '+': c = a + b;  break;
+	case '-': c = a - b;  break;
+	case '*': c = a * b;  break;
+	case '/': c = a / b;  break;
 	default: cout << "Error: Net takoi jivotnY" << endl; break;
 	}
-
+	cout << a << s << b << " = " << c << endl;
 
 
 #ifdef SWITCH_SYNTAX
