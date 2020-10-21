@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Loops", "Loops\Loops.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FOR_LOOP", "FOR_LOOP\FOR_LOOP.vcxproj", "{7602B1B6-99C2-4678-9181-9E08E131D437}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NestedFor", "NestedFor\NestedFor.vcxproj", "{6A4481D1-E4A6-46CE-A0BD-B10652529987}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{7602B1B6-99C2-4678-9181-9E08E131D437}.Release|x64.Build.0 = Release|x64
 		{7602B1B6-99C2-4678-9181-9E08E131D437}.Release|x86.ActiveCfg = Release|Win32
 		{7602B1B6-99C2-4678-9181-9E08E131D437}.Release|x86.Build.0 = Release|Win32
+		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Debug|x64.ActiveCfg = Debug|x64
+		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Debug|x64.Build.0 = Debug|x64
+		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Debug|x86.ActiveCfg = Debug|Win32
+		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Debug|x86.Build.0 = Debug|Win32
+		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Release|x64.ActiveCfg = Release|x64
+		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Release|x64.Build.0 = Release|x64
+		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Release|x86.ActiveCfg = Release|Win32
+		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
