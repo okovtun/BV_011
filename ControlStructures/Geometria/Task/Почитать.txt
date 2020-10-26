@@ -1,0 +1,2 @@
+Для перевода используйте Lingvo, а не Google translate.
+http://www.cplusplus.com/doc/tutorial/arrays/

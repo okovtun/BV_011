@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FOR_LOOP", "FOR_LOOP\FOR_LO
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NestedFor", "NestedFor\NestedFor.vcxproj", "{6A4481D1-E4A6-46CE-A0BD-B10652529987}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Geometria", "Geometria\Geometria.vcxproj", "{F5293CC8-2A62-404F-8622-3E1392AD6CA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Release|x64.Build.0 = Release|x64
 		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Release|x86.ActiveCfg = Release|Win32
 		{6A4481D1-E4A6-46CE-A0BD-B10652529987}.Release|x86.Build.0 = Release|Win32
+		{F5293CC8-2A62-404F-8622-3E1392AD6CA2}.Debug|x64.ActiveCfg = Debug|x64
+		{F5293CC8-2A62-404F-8622-3E1392AD6CA2}.Debug|x64.Build.0 = Debug|x64
+		{F5293CC8-2A62-404F-8622-3E1392AD6CA2}.Debug|x86.ActiveCfg = Debug|Win32
+		{F5293CC8-2A62-404F-8622-3E1392AD6CA2}.Debug|x86.Build.0 = Debug|Win32
+		{F5293CC8-2A62-404F-8622-3E1392AD6CA2}.Release|x64.ActiveCfg = Release|x64
+		{F5293CC8-2A62-404F-8622-3E1392AD6CA2}.Release|x64.Build.0 = Release|x64
+		{F5293CC8-2A62-404F-8622-3E1392AD6CA2}.Release|x86.ActiveCfg = Release|Win32
+		{F5293CC8-2A62-404F-8622-3E1392AD6CA2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

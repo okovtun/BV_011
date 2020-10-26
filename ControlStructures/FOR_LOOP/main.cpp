@@ -7,8 +7,9 @@ void main()
 	int n;	//Количество итераций
 	cout << "Введите количество итераций: ";
 	cin >> n;
-	for (int i = 0; i < n; i++)
+	for (int i = 0, a = 0, b = 1; i < n; i++/*, b += a, a = b - a*/)
 	{
-		cout << i << "\t";
+		cout << a << "\t";
+		a = (b += a) - a;
 	}
 }
