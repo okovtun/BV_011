@@ -4,6 +4,12 @@ http://cplusplus.com/doc/tutorial/
 http://cplusplus.com/doc/tutorial/control/
 
 TODO:
+1. Добить Геометрию;
+2. Добить старые домашки на ВЛОЖЕННЫЕ FOR-ы;
+3. У кого все это сделано, ChessBoard.jpg здесь: https://github.com/okovtun/BV_011/tree/master/ControlStructures/Geometria/Task ;-)
+4. Ну если совсем уже будет скучно, то открываем HardChess.jpg (Don't hate me please:))
+
+DONE:
 1. Вывести на экран таблицу Пифагора;
 2. Вывести на экран ряд простых чисел до введенного с клавиатуры. Простым называется число, которе делится только на себя и на единицу;
 3. Вывести на экран фигуры из файла Geometria1.txt;

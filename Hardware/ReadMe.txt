@@ -1,3 +1,7 @@
+TODO:
+Подорать комплектующие для домашнего компьютера со встроенным видеоадаптером. 
+Нужно подорать только те комплектующие, которые являются ядром системы: CPU, RAM, MB, SSD.
+
 TOREAD:
 https://www.ixbt.com/mainboard/ddr3-rmma.shtml
 https://www.ixbt.com/mainboard/ddr2-rmma.shtml
