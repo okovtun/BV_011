@@ -4,6 +4,13 @@ http://cplusplus.com/doc/tutorial/
 http://cplusplus.com/doc/tutorial/control/
 
 TODO:
+
++ - + - +
+- + - + -
++ - + - +
+- + - + -
++ - + - +
+
 1. Добить Геометрию;
 2. Добить старые домашки на ВЛОЖЕННЫЕ FOR-ы;
 3. У кого все это сделано, ChessBoard.jpg здесь: https://github.com/okovtun/BV_011/tree/master/ControlStructures/Geometria/Task ;-)

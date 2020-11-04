@@ -6,6 +6,7 @@ using namespace std;
 //#define TRIANLE_2
 //#define TRIANLE_3
 //#define TRIANLE_4
+//#define ROMBUS
 
 void main()
 {
@@ -75,6 +76,7 @@ void main()
 	}
 #endif // TRIANLE_4
 
+#ifdef ROMBUS
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = i; j < n; j++)
@@ -97,11 +99,24 @@ void main()
 		}
 		cout << "\\";
 		//for (int j = 0; j < (n - i - 1) * 2; j++)
-		for (int j = (i+1)*2; j < (n) * 2; j++)
+		for (int j = (i + 1) * 2; j < (n) * 2; j++)
 		{
 			cout << " ";
 		}
 		cout << "/";
 		cout << endl;
 	}
+#endif // ROMBUS
+
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j <= n; j++)
+			//if ((i + j) % 2 == 0)cout << "+ ";	else cout << "- ";
+			//((i + j) % 2 == 0) ? cout << "+ " : cout << "- ";
+			//cout << ( j == n ? "\n" : (i + j) % 2 == 0 ? "+ " : "- " );
+			cout << ((i + j) % 2 == 0 ? "+ " : "- ");
+	cout << endl;
+	true;
 }
+
+//			Ternary
+//	condition ? value1 : value2;
