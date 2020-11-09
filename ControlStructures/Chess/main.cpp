@@ -8,6 +8,8 @@ using namespace std;
 #define DOWN_RIGHT_CORNER	(char)217
 #define HORIZ_LINE			(char)196
 #define VERT_LINE			(char)179
+#define KLETKA				(char)219
+#define PROBEL				(char)32
 
 void main()
 {
@@ -18,19 +20,20 @@ void main()
 		cout << i << " - " << (char)i << " \n";
 	}*/
 	int n;
-	cout << "¬ведите размер фигуры: "; cin >> n;
+	cout << "¬ведите размер фигуры: "; cin >> n; n++;
 	setlocale(LC_ALL, "C");
 	for (int i = 0; i <= n; i++)	//—четчик 'i' нумерует строки.
 	{
 		for (int j = 0; j <= n; j++)	//—четчик 'j' нумерует позицию в строке (столбик)
 		{
-			if (i == 0 && j == 0)cout << UP_LEFT_CORNER;
+				 if (i == 0 && j == 0)cout << UP_LEFT_CORNER;
 			else if (i == 0 && j == n)cout << UP_RIGHT_CORNER;
 			else if (i == n && j == 0)cout << DOWN_LEFT_CORNER;
 			else if (i == n && j == n)cout << DOWN_RIGHT_CORNER;
 			else if (i == 0 || i == n)cout << HORIZ_LINE << HORIZ_LINE;
 			else if (j == 0 || j == n)cout << VERT_LINE;
-			else cout << "  ";
+			else if ((i + j) % 2 == 0)cout << KLETKA << KLETKA;
+			else cout << PROBEL << PROBEL;
 		}
 		cout << endl;
 	}

@@ -1,3 +1,15 @@
+Power:
+https://ru.gecid.com/power/sovremennyee_bloki_pitaniya_atx_i_ih_harakteristiki/
+https://ru.gecid.com/power/sovremennyee_bloki_pitaniya_atx_i_ih_harakteristiki/?s=1
+https://www.youtube.com/watch?v=5TUwyZiCBrw&t=1010s
+https://www.youtube.com/watch?v=1cwLPL8bUPs
+
+Cool:
+https://www.youtube.com/watch?v=A8KJwdVKTok&t=1s
+https://www.youtube.com/watch?v=mALfZmxyOQ4
+https://www.youtube.com/watch?v=1XUd7QgSb4A
+https://www.youtube.com/watch?v=ipcyfvGAb4E
+
 
 TO_WATCH:
 https://www.youtube.com/watch?v=ecdkLMmkya4 - Очень наглядное пособие по установке CPU

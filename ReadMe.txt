@@ -4,6 +4,13 @@ http://cplusplus.com/doc/tutorial/
 http://cplusplus.com/doc/tutorial/control/
 
 TODO:
+Вложить в квадратик Шахматные клетки. Если это сделаете, то можно смотреть Анину задачу.
+
+Аня: https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/HardChess.jpg
+
+Вера: Треугольник Паскаля.
+
+DONE:
 
 + - + - +
 - + - + -
