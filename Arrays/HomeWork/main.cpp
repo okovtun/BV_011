@@ -1,44 +1,33 @@
-#include <iostream>
-#include <conio.h>
-#include <iomanip>
+#include<iostream>
+#include<conio.h>
 using namespace std;
-#define homework_task_1
-#define homework_task_2
-#define homework_task_3
+
 void main()
 {
-	setlocale(LC_ALL, "");
-#ifdef homework_task_1
-	unsigned int numb;
-	unsigned long fact = 1;
-	cout << "Задача 1. Вычесление факториал числа\n" << "Введите целое число: ";
-	cin >> numb;
-	for (int i = numb; i > 0; i--)
-		fact *= i;
-	cout << "Факториал числа равен: " << fact << endl;
-	/* 1. Используя цикл for, написать программу, которая вычисляет факториал числа, введенного с клавиатуры;*/
-#endif
-#ifdef homework_task_2
-	int x, n, b;
-	cout << "Задача 2. Возведение в степень числа\n";
-	cout << "Enter the number: "; cin >> x; cout << "\n";
-	cout << "Enter the power: ";  cin >> n; cout << "\n";
-	b = x;
-	for (int i = 1; i < n; i++) {
-		b = b * x;
-	}
-	cout << "The result is: " << b << endl;
-	/* 2. Исползуя цикл for возвести указанное число, в указанную степень;*/
-#endif
-#ifdef homework_task_3
-	int numb2;
-	cout << "Задача 3.\tТаблица ASCII (American Standart Code Information Interchange)" << endl;
-	for (int i = 1; i < 256; i++)
+	setlocale(LC_ALL, "Rus");
+	do
 	{
-		cout << (char)i << setw(5);
-	}
-	cout << endl;
-	/*3. Вывести на экран таблицу ASCII - символов, разделенных пробелами, по 16 символов в строке.*/
-#endif	
+		system("CLS");
+		int decimal, rank = 0;
+		cout << "Введите десятичное число для конвертации в двоичный код: "; cin >> decimal;
+		const int n = 32;
+		int arr[n];
+		cout << "\t\t\t\t\t      Результат: ";
+		if (decimal < 0) cout << "-";
+		int i = 0;
+		for (; decimal; decimal /= 2, i++)
+		{
+			arr[i] = (decimal % 2) ? 1 : arr[i] = 0;
+			;
+			//if (decimal != 0) rank++;
+		}
+		//for (int i = rank; i >= 0; i--) cout << arr[i];
+		for (i--; i >= 0; i--)
+		{
+			cout << arr[i];
+			if (i % 4 == 0)cout << " ";
+			if (i % 8 == 0)cout << " ";
+		}
+		cout << endl << "Для выхода нажмите Escape, для продолжения нажмите любую клавишу.\n";
+	} while (_getch() != 27);
 }
-

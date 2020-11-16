@@ -8,6 +8,14 @@ using namespace std;
 
 void main()
 {
+	int a = 2;
+	int b = 3;
+	cout << a << "\t" << b << endl;
+	int c = b;
+	b = a;
+	a = c;
+	cout << a << "\t" << b << endl;
+	////////////////////////////////////////////////////
 	setlocale(LC_ALL, "Russian");
 	const int n = 10;
 	int arr[n] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -21,16 +29,26 @@ void main()
 
 	int number_of_shifts;
 	cout << "На сколько элементов сдвинуть массив: "; cin >> number_of_shifts;
-	
+
 	/////////////////////////////////////////////////////////
 	////////////		Циклический сдвиг		/////////////
 
-	int buffer = arr[0];
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < number_of_shifts; i++)
 	{
-		arr[i] = arr[i + 1];
+		/*int buffer = arr[0];
+		for (int i = 0; i < n; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[n - 1] = buffer;*/
+
+		for (int i = 0; i < n; i++)
+		{
+			int buffer = arr[i];
+			arr[i] = arr[i + 1];
+			arr[i + 1] = arr[i];
+		}
 	}
-	arr[n - 1] = buffer;
 
 	/////////////////////////////////////////////////////////
 
@@ -40,4 +58,6 @@ void main()
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
+
+	/////////////////////////////////////////////////////////
 }
