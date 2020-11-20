@@ -5,29 +5,59 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "Rus");
-	do
+	const int n = 10;
+	int arr[n];
+	int rand_MAX = 10;
+
+
+	//Initilize array with random elements between 0 and 9
+	for (int i = 0; i < n; i++)
 	{
-		system("CLS");
-		int decimal, rank = 0;
-		cout << "Введите десятичное число для конвертации в двоичный код: "; cin >> decimal;
-		const int n = 32;
-		int arr[n];
-		cout << "\t\t\t\t\t      Результат: ";
-		if (decimal < 0) cout << "-";
-		int i = 0;
-		for (; decimal; decimal /= 2, i++)
+		arr[i] = rand() % rand_MAX;
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+
+	cout << endl;
+	bool correction = true;
+	while (correction)
+	{
+		correction = false;
+		for (int i = 0; i < n - 1; i++)
 		{
-			arr[i] = (decimal % 2) ? 1 : arr[i] = 0;
-			;
-			//if (decimal != 0) rank++;
+			if (arr[i] > arr[i + 1])
+			{
+				int buffer = arr[i + 1];
+				arr[i + 1] = arr[i];
+				arr[i] = buffer;
+				correction = true;
+			}
 		}
-		//for (int i = rank; i >= 0; i--) cout << arr[i];
-		for (i--; i >= 0; i--)
-		{
-			cout << arr[i];
-			if (i % 4 == 0)cout << " ";
-			if (i % 8 == 0)cout << " ";
-		}
-		cout << endl << "Для выхода нажмите Escape, для продолжения нажмите любую клавишу.\n";
-	} while (_getch() != 27);
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		int j;
+		for (j = 0; j < i; j++)
+			if (arr[i] == arr[j])
+				break;
+		if (i == j)
+			cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	/*for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;*/
 }

@@ -1,3 +1,14 @@
+Graphics:
+TOREAD:
+https://www.ixbt.com/video3/guide.shtml - рекомендую все разделы. Очень крутое руководство, мож не очень новое, но концепции Вы поймете.
+
+TOWATCH:
+https://www.youtube.com/watch?v=W0QlWFJ4wA4 - очень полезный видос. Тут про видеочипы, и про видеоплаты.
+https://www.youtube.com/watch?v=xUubxz18WZI
+https://www.youtube.com/watch?v=tcYOX089clw
+
+=========================================================================================
+
 Power:
 https://ru.gecid.com/power/sovremennyee_bloki_pitaniya_atx_i_ih_harakteristiki/
 https://ru.gecid.com/power/sovremennyee_bloki_pitaniya_atx_i_ih_harakteristiki/?s=1
