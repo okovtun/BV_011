@@ -1,63 +1,46 @@
 #include<iostream>
-#include<conio.h>
+#include<time.h>
+
 using namespace std;
 
 void main()
 {
-	setlocale(LC_ALL, "Rus");
+	setlocale(LC_ALL, "");
+	srand(time(NULL));
 	const int n = 10;
-	int arr[n];
-	int rand_MAX = 10;
-
-
-	//Initilize array with random elements between 0 and 9
+	int arr[n] = { };
+	for (int i = 0; i < n; i++)	arr[i] = rand() % 4;
+	cout << "Произвольный массив:" << endl;
+	for (int i = 0; i < n; i++) cout << arr[i] << "\t";
+	cout << endl << endl;
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % rand_MAX;
-	}
-
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-
-	cout << endl;
-	bool correction = true;
-	while (correction)
-	{
-		correction = false;
-		for (int i = 0; i < n - 1; i++)
+		for (int j = i + 1; j < n; j++)
 		{
-			if (arr[i] > arr[i + 1])
+			if (arr[j] < arr[i])
 			{
-				int buffer = arr[i + 1];
-				arr[i + 1] = arr[i];
-				arr[i] = buffer;
-				correction = true;
+				int buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
 			}
 		}
 	}
-
-	for (int i = 0; i < n; i++)
+	int shift = 0, amount = 0, number = 0;
+	for (int i = 0; i < n; i += amount)
 	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-
-	for (int i = 0; i < n; i++)
-	{
-		int j;
-		for (j = 0; j < i; j++)
+		amount = 1;
+		for (int j = ++shift; j < n; j++)
+		{
 			if (arr[i] == arr[j])
-				break;
-		if (i == j)
-			cout << arr[i] << "\t";
+			{
+				amount++;
+				shift++;
+				number = arr[i];
+			}
+		}
+		if (amount > 1) cout << "Число \"" << number << "\"" << " встречается " << amount << " раз(-а) в данном массиве!" << endl;
+
 	}
 	cout << endl;
-
-	/*for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;*/
+	system("PAUSE");
 }
