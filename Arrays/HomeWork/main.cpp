@@ -1,46 +1,27 @@
-#include<iostream>
-#include<time.h>
+//
+//  main.cpp
+//  IZ10V2
+//
+//  Created by Анна Горячева on 30.11.2020.
+//
 
+#include <iostream>
 using namespace std;
-
-void main()
+//беда в инициализации массива...не понимаю какое число вписать или формулу?чтоб избежать овердофига нолей (((;
+int main()
 {
-	setlocale(LC_ALL, "");
-	srand(time(NULL));
-	const int n = 10;
-	int arr[n] = { };
-	for (int i = 0; i < n; i++)	arr[i] = rand() % 4;
-	cout << "Произвольный массив:" << endl;
-	for (int i = 0; i < n; i++) cout << arr[i] << "\t";
-	cout << endl << endl;
+	const int n = 32;
+	int arr[n], x;
+	cout << "Введите десятичное число для перевода в двоичную систему: "; cin >> x;
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				int buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-	int shift = 0, amount = 0, number = 0;
-	for (int i = 0; i < n; i += amount)
-	{
-		amount = 1;
-		for (int j = ++shift; j < n; j++)
-		{
-			if (arr[i] == arr[j])
-			{
-				amount++;
-				shift++;
-				number = arr[i];
-			}
-		}
-		if (amount > 1) cout << "Число \"" << number << "\"" << " встречается " << amount << " раз(-а) в данном массиве!" << endl;
-
+		arr[i] = x % 2;
+		x /= 2;
 	}
 	cout << endl;
-	system("PAUSE");
+	for (int i = n - 1; i >= 0; i--)
+	{
+		cout << arr[i] << " ";
+	}
+	return 0;
 }
