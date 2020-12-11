@@ -1,3 +1,7 @@
+HDD:
+https://rlab.ru/doc/hdd_from_inside.html
+
+
 Graphics:
 TOREAD:
 https://www.ixbt.com/video3/guide.shtml - рекомендую все разделы. Очень крутое руководство, мож не очень новое, но концепции Вы поймете.
