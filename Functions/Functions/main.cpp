@@ -56,7 +56,6 @@ int power(int a, int n)
 	int N = 1;
 	for (int i = 0; i < n; i++)
 	{
-
 		N *= a;
 	}
 	return N;
