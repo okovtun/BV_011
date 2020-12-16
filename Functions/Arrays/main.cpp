@@ -1,11 +1,16 @@
 #include<iostream>
 using namespace std;
 
+const int ROWS = 8;	//ROW - строка
+const int COLS = 7; //COLUMN - столбец
+
 void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
+void FillRand(int arr[ROWS][COLS], const int m, const int n);
 
 void Print(int arr[], const int n);
 void Print(double arr[], const int n);
+void Print(int arr[ROWS][COLS], const int m, const int n);
 
 void Sort(int arr[], const int n);
 void Sort(double arr[], const int n);
@@ -34,12 +39,17 @@ void main()
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	const int m = 8;
+	/*const int m = 8;
 	int crr[m];
 	FillRand(crr,m);
 	Print(crr, m);
 	Sort(crr, m);
-	Print(crr, m);
+	Print(crr, m);*/
+
+	
+	int i_arr2[ROWS][COLS];
+	FillRand(i_arr2, ROWS, COLS);
+	Print(i_arr2, ROWS, COLS);
 }
 
 void FillRand(int arr[], const int n)
@@ -57,6 +67,17 @@ void FillRand(double arr[], const int n)
 		arr[i] /= 10;
 	}
 }
+void FillRand(int arr[ROWS][COLS], const int m, const int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
+
 void Print(int arr[], const int n)
 {
 	//Вывод массива на экран:
@@ -75,6 +96,18 @@ void Print(double arr[], const int n)
 	}
 	cout << endl;
 }
+void Print(int arr[ROWS][COLS], const int m, const int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
 void Sort(int arr[], const int n)
 {
 	//Сортировка:
