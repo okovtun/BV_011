@@ -4,6 +4,11 @@ http://cplusplus.com/doc/tutorial/
 http://cplusplus.com/doc/tutorial/control/
 
 TODO:
+1. В ветке templated шаблонизировать все функции кроме FillRand();
+2. От ветки templated создать ветку separate_templated и в ней вынести шаблонные функции в отдельные файлы;
+3. Прислать ссылку на репозиторий на GitHub;
+
+DONE:
 Написать перегруженные функции для одномерного и двумерного массива типа int, double, char:
 void FillRand(...)	//заполняет массив случайными числами
 void Print(...)		//выводит массив на экран

@@ -8,25 +8,29 @@ void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
 void FillRand(int arr[ROWS][COLS], const int m, const int n);
 
-void Print(int arr[], const int n);
-void Print(double arr[], const int n);
-void Print(int arr[ROWS][COLS], const int m, const int n);
+template<typename T>
+void Print(T arr[], const int n);
+template<typename T>
+void Print(T arr[ROWS][COLS], const int m, const int n);
 
-void Sort(int arr[], const int n);
-void Sort(double arr[], const int n);
-void Sort(int arr[ROWS][COLS], const int m, const int n);
+template<typename T>
+void Sort(T arr[], const int n);
+template<typename T>
+void Sort(T arr[ROWS][COLS], const int m, const int n);
 
-int Sum(int arr[], const int n);
-double Sum(double arr[], const int n);
+template<typename T>
+T Sum(T arr[], const int n);
 
-double Avg(int arr[], const int n);
-double Avg(double arr[], const int n);
+template<typename T>
+double Avg(T arr[], const int n);
+
 
 #define delimiter "\n---------------------------------------------------\n"
 #define DEBUG
 void main()
 {
 	setlocale(LC_ALL, "Russian");
+
 	const int n = 13;
 	int i_arr[n];
 	FillRand(i_arr, n);
@@ -64,6 +68,7 @@ void main()
 	cout << "Отсортированный массив: " << endl;
 	Sort(i_arr2, ROWS, COLS);
 	Print(i_arr2, ROWS, COLS);
+
 }
 
 void FillRand(int arr[], const int n)
@@ -92,7 +97,8 @@ void FillRand(int arr[ROWS][COLS], const int m, const int n)
 	}
 }
 
-void Print(int arr[], const int n)
+template<typename T>
+void Print(T arr[], const int n)
 {
 	//Вывод массива на экран:
 	for (int i = 0; i < n; i++)
@@ -101,16 +107,8 @@ void Print(int arr[], const int n)
 	}
 	cout << endl;
 }
-void Print(double arr[], const int n)
-{
-	//Вывод массива на экран:
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(int arr[ROWS][COLS], const int m, const int n)
+template<typename T>
+void Print(T arr[ROWS][COLS], const int m, const int n)
 {
 	for (int i = 0; i < m; i++)
 	{
@@ -122,7 +120,8 @@ void Print(int arr[ROWS][COLS], const int m, const int n)
 	}
 }
 
-void Sort(int arr[], const int n)
+template<typename T>
+void Sort(T arr[], const int n)
 {
 	//Сортировка одномерного массива:
 	for (int i = 0; i < n; i++)	//Выбирает элемент, в который нужно поместить минимальное значение
@@ -131,30 +130,18 @@ void Sort(int arr[], const int n)
 		{
 			if (arr[j] < arr[i])
 			{
-				arr[i] ^= arr[j];
+				/*arr[i] ^= arr[j];
 				arr[j] ^= arr[i];
-				arr[i] ^= arr[j];
-			}
-		}
-	}
-}
-void Sort(double arr[], const int n)
-{
-	//Сортировка:
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				double buffer = arr[i];
+				arr[i] ^= arr[j];*/
+				T buffer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = buffer;
 			}
 		}
 	}
 }
-void Sort(int arr[ROWS][COLS], const int m, const int n)
+template<typename T>
+void Sort(T arr[ROWS][COLS], const int m, const int n)
 {
 #ifdef DEBUG
 	int iterations = 0;
@@ -184,7 +171,7 @@ void Sort(int arr[ROWS][COLS], const int m, const int n)
 #endif // DEBUG
 					if (/*ПЕРЕБИРАЕМЫЙ ЭЛЕМЕН*/arr[k][l] < arr[i][j]/*ВЫБРАННЫЙ ЭЛЕМЕН*/)
 					{
-						int buffer = arr[i][j];
+						T buffer = arr[i][j];
 						arr[i][j] = arr[k][l];
 						arr[k][l] = buffer;
 #ifdef DEBUG
@@ -200,31 +187,18 @@ void Sort(int arr[ROWS][COLS], const int m, const int n)
 	cout << "При этом, было выполнено " << exchanges << " обменов элементов\n";
 #endif // DEBUG
 }
-
-int Sum(int arr[], const int n)
+template<typename T>
+T Sum(T arr[], const int n)
 {
-	int Sum = 0;
+	T Sum = 0;
 	for (int i = 0; i < n; i++)
 	{
 		Sum += arr[i];
 	}
 	return Sum;
 }
-double Sum(double arr[], const int n)
-{
-	double Sum = 0;
-	for (int i = 0; i < n; i++)
-	{
-		Sum += arr[i];
-	}
-	return Sum;
-}
-
-double Avg(int arr[], const int n)
+template<typename T>
+double Avg(T arr[], const int n)
 {
 	return (double)Sum(arr, n) / n;
-}
-double Avg(double arr[], const int n)
-{
-	return Sum(arr, n) / n;
 }
