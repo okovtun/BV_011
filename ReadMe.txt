@@ -1,5 +1,7 @@
 https://www.youtube.com/watch?v=-QeOyTk78Vc&list=PLeqyOOqxeiIOBthdddnMnusyrbOOade8-&index=1&t=4s
 https://github.com/okovtun/BV_011
+https://t.me/joinchat/HLHBjsO8aUihlo2S
+https://discord.gg/NsqD7cY7hz
 http://cplusplus.com/doc/tutorial/
 http://cplusplus.com/doc/tutorial/control/
 
