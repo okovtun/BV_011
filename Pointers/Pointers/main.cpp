@@ -1,5 +1,6 @@
 ﻿#include<iostream>
 using namespace std;
+
 /*
 -------------------------------------
 Pointer - это переменная, которая хранит адрес другой переменной.
@@ -11,9 +12,14 @@ Hexadecimal (0x...)
 0x0000 0000 4 Bytes;
 -------------------------------------
 */
+
+//#define POINTERS_BASICS
+#define POINTERS_AND_ARRAYS
+
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef POINTERS_BASICS
 	int a = 2;	//Объявляем переменную 'a'
 	int* pa = &a;//Объявляем указатель 'pa', и инициализируем его адресом переменной 'a'
 	cout << a << endl;	//Выводим на экран значение переменной 'a'.
@@ -29,11 +35,42 @@ void main()
 	int* pb;	//Объявляем указатель 'pb'
 	int b = 3;
 	pb = &b;
-//(int*)(int*)
-	//int  - int
-	//int* - Указатель на int
-	//char  - char
-	//char* - указатель на char
-	//double  - double
-	//double* - указатель на double.
+	//(int*)(int*)
+		//int  - int
+		//int* - Указатель на int
+		//char  - char
+		//char* - указатель на char
+		//double  - double
+		//double* - указатель на double.  
+#endif // POINTERS_BASICS
+	
+	using std::cin;
+	using std::cout;
+	using std::endl;
+	const int n = 5;
+	int arr[n] = { 3,5,8,13,21 };
+	cout << arr << endl;
+	//		Pointer arithmetics
+	/*
+	-------------------------------------------
+		+, -, ++, --
+		char*	- 1 Byte
+		short*	- 2 Byte
+		int*	- 4 Byte
+		double*	- 8 Byte 
+	-------------------------------------------
+	*/
+	for (int i = 0; i < n; i++)
+	{
+		cout << *(arr + i) << "\t";
+	}
+	cout << endl;
+
+	int* p_arr = arr;
+	for (int i = 0; i < n; i++)
+	{
+		cout << *p_arr++ << "\t";
+	}
+	cout << endl;
+	cout << *arr << endl;
 }
