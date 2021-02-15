@@ -4,6 +4,9 @@ using namespace std;
 void FillRand(int* arr, const int n);
 void Print(int arr[], const int n);
 
+#define DYNAMIC_MEMORY_1
+#define DYNAMIC_MEMORY_2
+
 void main()
 {
 	setlocale(LC_ALL, "");
