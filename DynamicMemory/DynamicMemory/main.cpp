@@ -4,36 +4,31 @@ using namespace std;
 void FillRand(int* arr, const int n);
 void Print(int arr[], const int n);
 
+int* push_back(int arr[], int& n, int value);
+
 #define DYNAMIC_MEMORY_1
 #define DYNAMIC_MEMORY_2
 
 void main()
 {
 	setlocale(LC_ALL, "");
-	int n;
+	int n;	//Размер массива
 	cout << "Введите размер массива: "; cin >> n;
-	int* arr = new int[n] {};
-	cout << arr << endl;
+	
+	//Объявление динамческого массива:
+	int* arr = new int[n];
+	/*int s_arr[5];
+	cout << sizeof(arr) << endl;;//sizeof() возвращает размер указателя
+	cout << sizeof(s_arr) << endl;
+	Print(s_arr, n);*/
 	FillRand(arr, n);
 	Print(arr, n);
-	
-	int value;	//Добавляемое значение
+	int value;	//Значение добавляемое в массив
 	cout << "Введите добавляемое значение: "; cin >> value;
-	/*
-	TODO: Алгоритм добавления элемента
-	*/
-	arr[n] = value;
-	n++;
+	arr = push_back(arr, n, value);
 	Print(arr, n);
-
-	/*int brr[5];
-	cout << brr << endl;
-	FillRand(brr, 5);
-	Print(brr, 5);*/
-	
 	delete[] arr;
-	//for (;;)new int[1000000];
-	cout << "That's okay" << endl;
+	cout << "That's okey" << endl;
 }
 
 void FillRand(int* arr, const int n)
@@ -46,10 +41,37 @@ void FillRand(int* arr, const int n)
 }
 void Print(int arr[], const int n)
 {
+	cout << "Размер массива: " << sizeof(arr) << endl;
 	for (int i = 0; i < n; i++)
 	{
 		//[] - оператор индексирования, возвращает значение по индексу
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
+}
+
+int* push_back(int arr[], int& n, int value)
+{
+	//////////////////////////////////////////////////////////////////////
+	////////////	ДОБАВЛЕНИЕ ЗНАЧЕНИЯ В КОНЕЦ МАССИВА:	//////////////
+	//////////////////////////////////////////////////////////////////////
+	//1)Создаем буферный массив нужного размера (на 1 элемент больше), это будет наш новый массив:
+	int* buffer = new int[n + 1];
+	//2)Копируем значения из исходного массива в буферный:
+	for (int i = 0; i < n; i++)
+	{
+		buffer[i] = arr[i];
+	}
+	//3)Удаляем исходный массив:
+	//cout << typeid(arr).name() << endl;
+	delete[] arr;
+	//4)Подменяем адрес старого массива адресом нового массива:
+	arr = buffer;
+	//После этого в массиве 'arr' появился элемент, в который можно положить еще одно значение
+	//5)Помещаем добавляемое значение в конец массива:
+	arr[n] = value;
+	//6)После того как в массив добавился элемент, количество его элементов увелчилось на 1:
+	n++;
+	//7)Mission complete - значение добавлено :-)
+	return arr;
 }
