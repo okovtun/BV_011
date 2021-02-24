@@ -1,8 +1,17 @@
 ﻿#include<iostream>
-using namespace std;
+//using namespace std;
+
+using std::cin;
+using std::cout;
+using std::endl;
+
+
+#define tab "\t"
 
 void FillRand(int* arr, const int n);
+void FillRand(int** arr, const int m, const int n);
 void Print(int arr[], const int n);
+void Print(int** arr, const int m, const int n);
 
 //Добавление элементов
 int* push_back(int arr[], int& n, int value);
@@ -12,15 +21,19 @@ int* push_front(int arr[], int& n, int value);
 int* pop_back(int arr[], int& n);
 int* pop_front(int arr[], int& n);
 
-#define DYNAMIC_MEMORY_1
+////////////////////////////////////////////////////////////////////////
+int** push_row_back(int** arr, int& m, const int n);	//Добавление строки в конец массива
+
+//#define DYNAMIC_MEMORY_1
 #define DYNAMIC_MEMORY_2
 
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef DYNAMIC_MEMORY_1
 	int n;	//Размер массива
 	cout << "Введите размер массива: "; cin >> n;
-	
+
 	//Объявление динамческого массива:
 	int* arr = new int[n];
 	/*int s_arr[5];
@@ -45,12 +58,69 @@ void main()
 	cout << "Удавление элемента с конца массива:\n";
 	arr = pop_back(arr, n);
 	Print(arr, n);
-	
+
 	cout << "Удавление элемента с начала массива:\n";
 	arr = pop_front(arr, n);
 	Print(arr, n);
 
 	delete[] arr;
+#endif // DYNAMIC_MEMORY_1
+
+	int a = 2;
+	int* pa = &a;
+	int** p = &pa;
+
+	//int - int
+	//int* - Указатель на int
+	//int** - Указатель на указатель на int
+
+#ifdef DYNAMIC_MEMORY_2
+	int m;	//Количество строк
+	int n;	//Количество столбцов
+	cout << "Введите количество строк:   "; cin >> m;
+	cout << "Введите количество столбцов:"; cin >> n;
+
+	//////////////////////////////////////////////////////////////////////////////////
+	////////////////////////		ОБЪЯВЛЕНИЕ МАССИВА		//////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+
+	//1) Создаем массив указателей:
+	int** arr = new int*[m];
+	//2) Выделяем память под строки:
+	for (int i = 0; i < m; i++)
+	{
+		arr[i] = new int[n] {};
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////
+	///////////////////////		ИСПОЛЬЗОВАНИЕ МАССИВА		//////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+
+	//				Обращение к элементам массива:
+	//FillRand(arr, m, n);
+	Print(arr, m, n);
+	cout << "Memory allocated" << endl;
+	//cout << "Pushing row back..." << endl;
+	//cout << "Размер массива: " << sizeof(arr) << endl;
+	cout << "Добавляем строку в конец массива: " << endl;
+	arr = push_row_back(arr, m, n);
+	cout << "Строка добавлена :-)" << endl;
+	//Print(arr, m, n);
+
+	//////////////////////////////////////////////////////////////////////////////////
+	////////////////////////		УДАЛЕНИЕ МАССИВА		//////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+
+	//1) Удаляем строки двумерного массива:
+	for (int i = 0; i < m; i++)
+	{
+		delete[] arr[i];
+	}
+	//2) Удаляем массив указателей:
+	delete[] arr;
+#endif // DYNAMIC_MEMORY_2
+
+
 	cout << "That's okey" << endl;
 }
 
@@ -62,6 +132,16 @@ void FillRand(int* arr, const int n)
 		*(arr + i) = rand() % 100;
 	}
 }
+void FillRand(int** arr, const int m, const int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
 void Print(int arr[], const int n)
 {
 	//cout << "Размер массива: " << sizeof(arr) << endl;
@@ -71,6 +151,17 @@ void Print(int arr[], const int n)
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
+}
+void Print(int** arr, const int m, const int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << arr[i][j] << tab;
+		}
+		cout << endl;
+	}
 }
 
 int* push_back(int arr[], int& n, int value)
@@ -123,10 +214,38 @@ int* pop_back(int arr[], int& n)
 	delete[] arr;
 	return buffer;
 }
-int* pop_front(int arr[], int& n)
+int* pop_front(int* arr, int& n)
 {
 	int* buffer = new int[--n];
 	for (int i = 0; i < n; i++)	buffer[i] = arr[i + 1];
 	delete[] arr;
+	return buffer;
+}
+
+int** push_row_back(int** arr, int& m, const int n)
+{
+	//1) Создаем буферный массив:
+	int** buffer = new int*[m + 1];
+	for (int i = 0; i < m + 1; i++)
+	{
+		buffer[i] = new int[n] {};
+	}
+	//2) Копируем значения в буферный массив:
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			buffer[i][j] = arr[i][j];
+		}
+	}
+	//3) Удаляем исходный массив:
+	for (int i = 0; i < m; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+	//4)Увеличиваем количество строк:
+	m++;
+	//5)Возвращаем адрес нового массива на место вызова:
 	return buffer;
 }
