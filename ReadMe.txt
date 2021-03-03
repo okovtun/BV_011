@@ -6,6 +6,21 @@ http://cplusplus.com/doc/tutorial/
 http://cplusplus.com/doc/tutorial/control/
 
 TODO:
+1. В проект DynamicMemory добавить функции:
+	int** insert_row(...);	//Вставляет строку по индексу
+	int** pop_row_back(...);//Удаляет последнюю строку массива
+	int** pop_row_front(...);
+	int** erase_row(...);
+
+	void push_col_front(..);//Добавляет столбик в начало массива
+	void insert_col(...);
+	void pop_col_back(...);
+	void pop_col_front(...);
+	void erase_col(...);
+
+2. Создать ветку dynamic_templated, и в этой ветке шаблонизировать все функции для работы с массивами.
+
+DONE:
 Добить insert() и erase().
 1. Есть массив из 10ти элементов. Необходмо создать еще 2 массива even[] и odd[] минимально возможного размера.
    В массив even[] нужно скопировать все четные значения из исходного массива, а в масси odd[] - все нечетные значения.

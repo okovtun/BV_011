@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicMemory", "DynamicMem
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Anna", "Anna\Anna.vcxproj", "{FD032F6C-5D2B-4F44-A51C-0FB3074E4640}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vera", "Vera\Vera.vcxproj", "{44B16427-1620-4086-9196-0CA3E116FE4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{FD032F6C-5D2B-4F44-A51C-0FB3074E4640}.Release|x64.Build.0 = Release|x64
 		{FD032F6C-5D2B-4F44-A51C-0FB3074E4640}.Release|x86.ActiveCfg = Release|Win32
 		{FD032F6C-5D2B-4F44-A51C-0FB3074E4640}.Release|x86.Build.0 = Release|Win32
+		{44B16427-1620-4086-9196-0CA3E116FE4B}.Debug|x64.ActiveCfg = Debug|x64
+		{44B16427-1620-4086-9196-0CA3E116FE4B}.Debug|x64.Build.0 = Debug|x64
+		{44B16427-1620-4086-9196-0CA3E116FE4B}.Debug|x86.ActiveCfg = Debug|Win32
+		{44B16427-1620-4086-9196-0CA3E116FE4B}.Debug|x86.Build.0 = Debug|Win32
+		{44B16427-1620-4086-9196-0CA3E116FE4B}.Release|x64.ActiveCfg = Release|x64
+		{44B16427-1620-4086-9196-0CA3E116FE4B}.Release|x64.Build.0 = Release|x64
+		{44B16427-1620-4086-9196-0CA3E116FE4B}.Release|x86.ActiveCfg = Release|Win32
+		{44B16427-1620-4086-9196-0CA3E116FE4B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

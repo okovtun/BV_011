@@ -36,7 +36,7 @@ int main()
 	cout << "Введите количество столбцов    "; cin >> n;
 	// 1 создаем массив указателей
 	int** arr = new int*[m];
-	// 2 Выделяем памят под строки
+	//     2 Выделяем память под строки
 	for (int i = 0; i < m; i++)
 	{
 		arr[i] = new int[n];
@@ -44,15 +44,17 @@ int main()
 	// Обращение к элементам массива
 	FillRand(arr, m, n);
 	Print(arr, m, n);
-	cout << "Добавляем строку в конец массива :" << endl;
+	cout << "Memory allocated" << endl;
+	// cout << "Добавляем строку в конец массива :" << endl;
+
 	arr = push_row_back(arr, m, n);
+	cout << "Строка добавлена" << endl;
 	Print(arr, m, n);
-	//Удаляем строки двумерного массива
+	//    Удаляем строки двумерного массива
 	for (int i = 0; i < m; i++)
 	{
 		delete[]arr[i];
 	}
-	// Удаляем массив указателей
 	delete[]arr;
 #ifdef DYNAMIC_MEMORY_1
 	// int n; // добавляемые значения
@@ -135,28 +137,16 @@ int** push_row_back(int** arr, int& m, const int n)
 {
 	//Создаем буферный массив
 	int** buffer = new int*[m + 1];
-	for (int i = 0; i < m+1; i++)
-	{
-		buffer[i] = new int[n] {};
-	}
-	//Скопируем значения в буфферный массив
 	for (int i = 0; i < m; i++)
 	{
-		for (int j = 0; j < n; j++)
-		{
-			buffer[i][j] = arr[i][j];
-		}
+		buffer[i] = arr[i];
 	}
-	//Удаляем исходный массив
-	for (int i = 0; i < m; i++)
-	{
-		delete[] arr[i];
-	}
-	delete[] arr;
-	//Увеличиваем количество строк
+
+	// Удаляем массив указателей
+	delete[]arr;
+	//  Сохдаем последнюю строку массива
+	buffer[m] = new int [n] {};
 	m++;
-	//Возвращаем адрес нового массива на место вызова
-	arr = buffer;
 	return buffer;
 }
 void Push_Front(int* &arr, int &n, int value)
