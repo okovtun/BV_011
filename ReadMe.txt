@@ -6,6 +6,9 @@ http://cplusplus.com/doc/tutorial/
 http://cplusplus.com/doc/tutorial/control/
 
 TODO:
+0. ЗАКОММИТИТЬ dynamic_templated!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Создать ветку dynamic_templated_separated, и в ней вынести функции в отдельные файлы.
+
 1. В проект DynamicMemory добавить функции:
 	int** insert_row(...);	//Вставляет строку по индексу
 	int** pop_row_back(...);//Удаляет последнюю строку массива
