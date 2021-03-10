@@ -1,12 +1,8 @@
-//
-//  main.cpp
-//  DM2
-//
-//  Created by Анна Горячева on 17.02.2021.
-//
-
 #include <iostream>
 using namespace std;
+
+int** Allocated(const int m, const int n);
+void Clear(int** arr, const int m);
 
 void FillRand(int* arr, const int n);
 void FillRand(int** arr, const int m, const int n);
@@ -16,6 +12,7 @@ void Print(int** arr, const int m, const int n);
 
 void Push_back(int* &arr, int &n, int value);
 void Push_Front(int* &arr, int &n, int value);
+
 void Insert(int* &arr, int &n, int index, int value);
 void Pop_back(int* &arr, int &n);
 void Pop_front(int* &arr, int &n);
@@ -23,6 +20,9 @@ void Erase(int* &arr, int &n, int index);
 
 //Функция добавления строки в конец массива
 int** push_row_back(int** arr, int& m, const int n);
+int** push_row_front(int** arr, int& m, const int n);
+
+void push_col_back(int** arr, int m, int &n);
 
 //#define DYNAMIC_MEMORY_1
 #define tab "/t"
@@ -34,14 +34,7 @@ int main()
 	int n; // stolbci
 	cout << "Введите количество строк   "; cin >> m;
 	cout << "Введите количество столбцов    "; cin >> n;
-	// 1 создаем массив указателей
-	int** arr = new int*[m];
-	//     2 Выделяем память под строки
-	for (int i = 0; i < m; i++)
-	{
-		arr[i] = new int[n];
-	}
-	// Обращение к элементам массива
+	int** arr = Allocated(m, n);
 	FillRand(arr, m, n);
 	Print(arr, m, n);
 	cout << "Memory allocated" << endl;
@@ -50,12 +43,15 @@ int main()
 	arr = push_row_back(arr, m, n);
 	cout << "Строка добавлена" << endl;
 	Print(arr, m, n);
-	//    Удаляем строки двумерного массива
-	for (int i = 0; i < m; i++)
-	{
-		delete[]arr[i];
-	}
-	delete[]arr;
+	cout << " Добавляем строку" << endl;
+	arr = push_row_front(arr, m, n);
+
+	Print(arr, m, n);
+	cout << "Добавляем столбец в конце массива :" << endl;
+	push_col_back(arr, m, n);
+	Print(arr, m, n);
+
+	Clear(arr, m);
 #ifdef DYNAMIC_MEMORY_1
 	// int n; // добавляемые значения
 	cout << "Введите размер массива: "; cin >> n;
@@ -81,6 +77,26 @@ int main()
 	Print(arr, n);
 #endif //DYNAMIC_MEMORY_1  delete [] arr;
 	return 0;
+}
+int** Allocated(const int m, const int n)
+{
+	// 1 создаем массив указателей
+	int** arr = new int*[m];
+	for (int i = 0; i < m; i++)
+	{
+		arr[i] = new int[n];
+	}
+	return arr;
+}
+void Clear(int** arr, const int m)
+{
+	//1) Удаляем строки двумерного массива:
+	for (int i = 0; i < m; i++)
+	{
+		delete[] arr[i];
+	}
+	//2) Удаляем массив указателей:
+	delete[] arr;
 }
 void FillRand(int arr[], const int n)
 {
@@ -144,11 +160,43 @@ int** push_row_back(int** arr, int& m, const int n)
 
 	// Удаляем массив указателей
 	delete[]arr;
-	//  Сохдаем последнюю строку массива
+	//  Создаем последнюю строку массива
 	buffer[m] = new int [n] {};
 	m++;
 	return buffer;
 }
+int** push_row_front(int** arr, int& m, const int n)
+{
+	int** buffer = new int*[m + 1];
+	for (int i = 0; i < m; i++)
+	{
+		buffer[i + 1] = arr[i];
+	}
+	//Удаляем исходный массив указателей
+	delete[]arr;
+	buffer[0] = new int [n] {};
+	m++;
+	return buffer;
+}
+
+void push_col_back(int** arr, const int m, int& n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		// создаем буфферную строку
+		int* buffer = new int[n + 1]{};
+		//копируем исходную строку массива в буфферную
+		for (int j = 0; j < n; j++)
+		{
+			buffer[j] = arr[i][j];
+		}
+		delete[]arr[i];
+		//подменяем адресв массиве указателей на адрес новой строки
+		arr[i] = buffer;
+	}
+	n++;
+}
+
 void Push_Front(int* &arr, int &n, int value)
 {
 	int* buffer = new int[n + 1];

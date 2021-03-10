@@ -7,6 +7,9 @@ using std::endl;
 
 #define tab "\t"
 
+int** Allocate(const int m, const int n);
+void Clear(int** arr, const int m);
+
 void FillRand(int* arr, const int n);
 void FillRand(int** arr, const int m, const int n);
 void Print(int arr[], const int n);
@@ -86,13 +89,7 @@ void main()
 	////////////////////////		ОБЪЯВЛЕНИЕ МАССИВА		//////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////
 
-	//1) Создаем массив указателей:
-	int** arr = new int*[m];
-	//2) Выделяем память под строки:
-	for (int i = 0; i < m; i++)
-	{
-		arr[i] = new int[n] {};
-	}
+	int** arr = Allocate(m, n);
 
 	//////////////////////////////////////////////////////////////////////////////////
 	///////////////////////		ИСПОЛЬЗОВАНИЕ МАССИВА		//////////////////////////
@@ -119,6 +116,27 @@ void main()
 	////////////////////////		УДАЛЕНИЕ МАССИВА		//////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////
 
+	Clear(arr, m);
+	
+#endif // DYNAMIC_MEMORY_2
+
+
+	cout << "That's okey" << endl;
+}
+
+int** Allocate(const int m, const int n)
+{
+	//1) Создаем массив указателей:
+	int** arr = new int*[m];
+	//2) Выделяем память под строки:
+	for (int i = 0; i < m; i++)
+	{
+		arr[i] = new int[n] {};
+	}
+	return arr;
+}
+void Clear(int** arr, const int m)
+{
 	//1) Удаляем строки двумерного массива:
 	for (int i = 0; i < m; i++)
 	{
@@ -126,12 +144,7 @@ void main()
 	}
 	//2) Удаляем массив указателей:
 	delete[] arr;
-#endif // DYNAMIC_MEMORY_2
-
-
-	cout << "That's okey" << endl;
 }
-
 void FillRand(int* arr, const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -251,6 +264,7 @@ int** push_row_back(int** arr, int& m, const int n)
 	}*/
 	//3) Удаляем исходный массив указателей:
 	delete[] arr;
+	arr = buffer;
 	//4) Создаем последнюю строку массива:
 	buffer[m] = new int[n] {};
 	//5)Увеличиваем количество строк:
