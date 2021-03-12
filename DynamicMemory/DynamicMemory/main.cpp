@@ -9,6 +9,8 @@ using std::endl;
 template<typename T>T** Allocate(const int m, const int n);
 template<typename T>void Clear(T** arr, const int m);
 
+template<typename T>void Random(T & value);
+
 template<typename T>void FillRand(T* arr, const int n);
 template<typename T>void FillRand(T** arr, const int m, const int n);
 
@@ -87,8 +89,8 @@ void main()
 	//////////////////////////////////////////////////////////////////////////////////
 	////////////////////////		ОБЪЯВЛЕНИЕ МАССИВА		//////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////
-
-	double** arr = Allocate<double>(m, n);
+	typedef float DataType;
+	DataType** arr = Allocate<DataType>(m, n);
 
 	//////////////////////////////////////////////////////////////////////////////////
 	///////////////////////		ИСПОЛЬЗОВАНИЕ МАССИВА		//////////////////////////
@@ -147,21 +149,34 @@ template<typename T>void Clear(T** arr, const int m)
 	//2) Удаляем массив указателей:
 	delete[] arr;
 }
+template<typename T>void Random(T& value)
+{
+	//cout << typeid(value).name() << endl;
+	if (typeid(value) == typeid(float) || typeid(value) == typeid(double))
+		value = double(rand() % 10000) / 100;
+	else if (typeid(value) == typeid(char))
+		value = rand();
+	else
+		value = rand() % 100;
+}
 template<typename T>void FillRand(T* arr, const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
 		//* - оператор разыменования, возвращает значение по адресу.
-		*(arr + i) = rand() % 100;
+		//*(arr + i) = rand() % 100;
+		Random(arr[i]);
 	}
 }
 template<typename T>void FillRand(T** arr, const int m, const int n)
 {
+	Random(arr[0][0]);
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
 		{
-			arr[i][j] = rand() % 100;
+			//arr[i][j] = rand() % 100;
+			Random(arr[i][j]);
 		}
 	}
 }
