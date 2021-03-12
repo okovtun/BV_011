@@ -126,7 +126,6 @@ void Random(T& value)
 		value = rand();
 	else
 		value = rand() % 100;
-
 }
 template<typename T>void FillRand(int arr[], const int n)
 {
