@@ -6,6 +6,17 @@ http://cplusplus.com/doc/tutorial/
 http://cplusplus.com/doc/tutorial/control/
 
 TODO:
+В проект NULLTerminatedLines добавить функции:
+void shrink(char str[]);	//Удаляет лишние пробелы из предложения
+bool is_palindrome(char str[]);	//Определяет, является ли строка палиндромом
+bool is_int_number(char str[]);	//Определяет, является ли строка целым числом
+int  to_int_number(char str[]);	//Если строка является целым числом, то возвращает его числовое значение
+bool is_bin_number(char str[]);	//Проверяет, является ли строка двоичным числом
+int  bin_to_dec(char str[]);	//Если строка является двоичным числом, возвращает его десятичное значение
+bool is_hex_number(char str[]);	//Проверяет, является ли строка шестнадцатеричным числом
+int  bin_to_dec(char str[]);	//Если строка является шестнадцатричным числом, возвращает его десятичное значение
+
+DONE:
 1. В проект DynamicMemory добавить функции:
 	int** insert_row(...);	//Вставляет строку по индексу
 	int** pop_row_back(...);//Удаляет последнюю строку массива
